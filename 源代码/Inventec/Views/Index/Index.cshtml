@@ -1,0 +1,321 @@
+﻿@model IEnumerable<PorscheBPM.Models.OrgUser>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Porsche Finance Easy Flow</title>
+    <script src="/Themes/Common/Scripts/jquery-1.10.2.js"></script>
+    <link href="/Themes/Common/Css/bootstrap.css" rel="stylesheet" />
+    <link href="/Themes/Css/site.css" rel="stylesheet" />
+    <link href="/Themes/Common/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Themes/Css/components.css" rel="stylesheet" />
+    <link href="/Themes/Css/layout.css" rel="stylesheet" />
+    <link href="/Themes/Css/@(Session["Theme"] == null ? "Black" : Session["Theme"])/darkblue.css" rel="stylesheet" />
+</head>
+<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo page-container-bg-solid" style="overflow:hidden">
+    <!-- BEGIN HEADER -->
+    <div class="page-header -i navbar navbar-fixed-top">
+        <!-- BEGIN HEADER INNER -->
+        <div class="page-header-inner">
+            <!-- BEGIN LOGO -->
+            <div class="page-logo">
+                <a href="/Index/">
+                    <img src="~/Themes/Images/@((Session["Theme"] != null && Session["Theme"].ToString().ToLower() == "blue" ? "logo_1.png" : "logo.png"))" alt="logo" class="logo-default" />
+
+                </a>
+                <div class="menu-toggler sidebar-toggler">
+                    <i class="icon-list icon-large"></i>
+                </div>
+            </div>
+            <div class="page-title"><img src="~/Themes/Images/title_home.png" /></div>
+            <!-- END LOGO -->
+            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+            <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                <i class="icon-list icon-large"></i>
+            </a>
+            <!-- END RESPONSIVE MENU TOGGLER -->
+            <!-- BEGIN TOP NAVIGATION MENU -->
+            <div class="top-menu">
+                <ul class="nav navbar-nav pull-right">
+                    <!-- BEGIN NOTIFICATION DROPDOWN -->
+                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                    <li class="dropdown dropdown-extended dropdown-notification hide" id="header_notification_bar">
+
+                    </li>
+                    <!-- END NOTIFICATION DROPDOWN -->
+                    <!-- BEGIN INBOX DROPDOWN -->
+                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                    <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar" style="display:none;">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <i class="icon-inbox"></i>
+                            <span class="badge badge-default">
+                                4
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="external">
+                                <h3> @Html.LangString("YouHave")<span class="bold">7 @Html.LangString("New")</span> @Html.LangString("Messages")</h3>
+                                <a href="#"> @Html.LangString("ViewAll") </a>
+                            </li>
+                            <li>
+                                <ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283"></ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- END INBOX DROPDOWN -->
+                    <!-- BEGIN TODO DROPDOWN -->
+                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                    <li class="dropdown dropdown-extended dropdown-tasks" id="header_task_bar" style="display:none;">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <i class="icon-calendar"></i>
+                            <span class="badge badge-default">
+                                3
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu extended tasks">
+                            <li class="external">
+                                <h3> @Html.LangString("YouHave") <span class="bold">12 @Html.LangString("Pending")</span> @Html.LangString("Tasks")</h3>
+                                <a href="/Index/Todo">@Html.LangString("ViewAll")</a>
+                            </li>
+                            <li>
+                                <ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283"></ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- END TODO DROPDOWN -->
+                    <!-- BEGIN USER LOGIN DROPDOWN -->
+                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                    <li class="dropdown dropdown-language">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <img src="~/Themes/Images/@(Session["Lang"] == "zh-CN"?"cn":"en").png" class="img-rounded" />
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-default">
+                            <li>
+                                <a href="@Url.Action("En")">
+                                    <img src="~/Themes/Images/en.png" class="img-rounded" /> English
+                                </a>
+                                <a href="@Url.Action("Cn")">
+                                    <img src="~/Themes/Images/cn.png" class="img-rounded" /> Chinese
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown dropdown-user">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <img alt="" class="img-circle" src="@(Session["UserPhoto"] != null && !String.IsNullOrEmpty(Session["UserPhoto"].ToString()) ? Session["UserPhoto"] : "/Themes/Images/userImage.png")" width="30" />
+                            <span class="username username-hide-on-mobile">
+                                @Session["UserName"]
+                            </span>
+                            <i class="icon-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-default">
+                            <li>
+                                <a href="/Personal/Index" target="mainPage">
+                                    <i class="icon-user"></i>  @Html.LangString("MyProfile")
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Personal/Inbox" target="mainPage">
+                                    <i class="icon-envelope"></i>  @Html.LangString("MyNotice") <span class="badge badge-success">
+                                        @ViewBag.Inbox
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/MyForm/ApproveList" target="mainPage">
+                                    <i class="icon-tasks"></i>  @Html.LangString("MyTasks") <span class="badge badge-danger">
+                                        @ViewBag.ApprovalInProcess
+                                    </span>
+                                </a>
+                            </li>
+                            @if (ViewBag.FinanceCheck != null && !String.IsNullOrEmpty(ViewBag.FinanceCheck))
+                            {
+                                <li>
+                                    <a href="/MyForm/FinanceApproveList" target="mainPage">
+                                        <i class="icon-check"></i>  @Html.LangString("FinanceCheck") <span class="badge badge-warning">
+                                            @ViewBag.FinanceCheck
+                                        </span>
+                                    </a>
+                                </li>
+                            }
+                            <li class="divider">
+                            </li>
+                            <li>
+                                <a href="/Login/Logout">
+                                    <i class="icon-key"></i>  @Html.LangString("LogOut")
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown dropdown-quick-sidebar-toggler">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <i class="icon-group"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- END TOP NAVIGATION MENU -->
+        </div>
+        <!-- END HEADER INNER -->
+    </div>
+    <div class="clearfix">
+    </div>
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <div class="page-sidebar-wrapper">
+            <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+            <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+            <div class="page-sidebar navbar-collapse collapse">
+                <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                    @foreach (var menus in ViewBag.Menus as IEnumerable<PorscheBPM.Models.SecMenu>)
+                    {
+                        <li>
+                            <a href='@(String.IsNullOrEmpty(menus.url)?"javascript:;":menus.url)' target="@menus.target">
+                                <i class="icon-@menus.icon"></i>
+                                <span class="title">@(Session["Lang"] == "zh-CN" ? menus.displayname : menus.menuname)</span>
+
+                                @if (menus.sec_menu1.Count > 0)
+                                {
+                                    <span class="arrow"></span>
+                                }
+                            </a>
+                            @if (menus.sec_menu1.Count > 0)
+                            {
+                                <ul class="sub-menu">
+                                    @foreach (var submenus in menus.sec_menu1.Where(p => Session["RoleMenus"].ToString().Contains(p.id.ToString()) && p.isactive == "1") as IEnumerable<PorscheBPM.Models.SecMenu>)
+                                    {
+                                        <li>
+                                            <a href='@(String.IsNullOrEmpty(submenus.url)?"javascript:;":submenus.url)' target="@submenus.target">
+                                                <i class="icon-@submenus.icon"></i> <span class="title">@(Session["Lang"] == "zh-CN" ? submenus.displayname : submenus.menuname)</span>
+
+                                                @if (submenus.sec_menu1.Count > 0)
+                                                {
+                                                    <span class="arrow"></span>
+                                                }
+                                            </a>
+                                            @if (submenus.sec_menu1.Count > 0)
+                                            {
+                                                <ul class="sub-menu">
+                                                    @foreach (var thrmenus in submenus.sec_menu1.Where(p => Session["RoleMenus"].ToString().Contains(p.id.ToString()) && p.isactive == "1") as IEnumerable<PorscheBPM.Models.SecMenu>)
+                                                    {
+                                                        <li>
+                                                            <a href='@(String.IsNullOrEmpty(thrmenus.url)?"javascript:;":thrmenus.url)' target="@thrmenus.target">
+                                                                <i class="icon-@thrmenus.icon"></i> <span class="title">@(Session["Lang"] == "zh-CN" ? thrmenus.displayname : thrmenus.menuname)</span>
+                                                            </a>
+                                                        </li>
+                                                    }
+                                                </ul>
+                                            }
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                        </li>
+                    }
+                </ul>
+                <!-- END SIDEBAR MENU -->
+            </div>
+        </div>
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="page-bar">
+                    <ul class="page-breadcrumb currentlevel">
+                        <li>
+                            <i class="icon-home icon-large"></i>
+                            <a href="/Index/Index">@Html.LangString("Home")</a>
+                            <i class="icon-angle-right"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="page-main full-height-content portlet">
+                    <iframe id="mainPage" name="mainPage" frameborder="0" style="width:100%;" src="/Index/Home" class="portlet-body main-Frame"></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- END CONTENT -->
+        <!-- BEGIN QUICK SIDEBAR -->
+        <a href="javascript:;" class="page-quick-sidebar-toggler"><i class="icon-close"></i></a>
+        <div class="page-quick-sidebar-wrapper">
+            <div class="page-quick-sidebar">
+                <div class="nav-justified">
+                    <div class="tab-content">
+                        <div class="tab-pane active page-quick-sidebar-chat">
+                            <div class="page-quick-sidebar-chat-users" data-rail-color="#ddd" data-wrapper-class="page-quick-sidebar-list">
+                                <h3 class="list-heading">Staff /  员工</h3>
+                                <h3 class="list-heading">
+                                    <li class="media">
+                                        <input type="text" class="form-control" id="contact" name="contact" placeholder="contact/联系人" />
+                                    </li>
+                                    </h3>
+                                    <ul class="media-list list-items" id="userlist">
+                                        @{
+                                            foreach (PorscheBPM.Models.OrgUser user in Model)
+                                            {
+                                                <li class="media">
+                                                    <img class="media-object" src="@(!String.IsNullOrEmpty(user.picture) ? user.picture : "/Themes/Images/userImage.png")" alt="@user.username">
+                                                    <div class="media-body">
+                                                        <h4 class="media-heading">@user.username</h4>
+                                                        <div class="media-heading-sub">
+                                                            @user.jobfunction<br />
+                                                            @user.email<br />
+                                                            @user.tel
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            }
+                                        }
+                                    </ul>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END QUICK SIDEBAR -->
+    </div>
+    <script src="~/Themes/Common/scripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/Themes/Common/scripts/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="~/Themes/scripts/metronic.js" type="text/javascript"></script>
+    <script src="~/Themes/scripts/layout.js" type="text/javascript"></script>
+    <script src="~/Themes/scripts/quick-sidebar.js" type="text/javascript"></script>
+    <script>
+        $(function () {
+            Metronic.init();
+            Layout.init();
+            QuickSidebar.init();
+            $(".page-sidebar-menu li").eq(0).addClass("active");
+
+            $("#contact").keyup(function () {
+                var contact = $(this).val();
+                $.get("@Url.Action("SearchUser")", { username: contact }, function (data) {
+                    $("#userlist li").remove();
+                    for (i = 0; i < data.length; i++) {
+                        var user = "<li class=\"media\">";
+                        user = user + "<img class=\"media-object\" src=\"" + (data[i].picture != "" && data[i].picture!=null ? data[i].picture : "/Themes/Images/userImage.png") + "\" alt=\"" + data[i].username + "\">";
+                        user = user + "<div class=\"media-body\">";
+                        user = user + "   <h4 class=\"media-heading\">" + data[i].username + "</h4>";
+                        user = user + "    <div class=\"media-heading-sub\">";
+                        user = user + data[i].jobfunction + "<br />";
+                        user = user + data[i].email + "<br>";
+                        user = user + data[i].tel;
+                        user = user + "     </div>";
+                        user = user + "   </div>";
+                        user = user + "</li>";
+                        $("#userlist").append(user);
+                    }
+                });
+            })
+        });
+    </script>
+</body>
+</html>

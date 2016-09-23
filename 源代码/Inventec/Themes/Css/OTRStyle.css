@@ -1,0 +1,192 @@
+﻿/*ReceivedNotification*/
+.FTop {
+    font-size: 46px;
+    font-weight: bold;
+}
+
+    .FTop img {
+        float: right;
+        margin-top: 10px;
+    }
+
+.Advance {
+    text-align: center;
+    font-size: 26px;
+}
+
+.content {
+    font-size: 16px;
+}
+
+.box {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 50px;
+}
+
+.FHead .Font {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.FHead p {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.foot {
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+
+
+
+/*RequestForm*/
+
+.RTop span {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.RTop p {
+    margin-left: 1200px;
+    font-size: 16px;
+}
+
+.Rbg {
+    background-color: #dcd4d4;
+    border: 2px solid black;
+    height: 20px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    font-weight: bold;
+}
+
+.RForm {
+    font-size: 20px;
+    height: 144px;
+}
+
+    .RForm ul {
+        float: left;
+        margin-top: 20px;
+        padding-left: 200px;
+    }
+
+        .RForm ul li {
+            list-style-type: none;
+        }
+
+
+
+.Topblank {
+    border: 2px solid black;
+    height: 20px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+}
+
+.Leftblank {
+    border: 2px solid black;
+    height: 20px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+}
+
+.Rightblank {
+    border: 2px solid black;
+    height: 20px;
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+}
+
+.Bottomblank {
+    border: 2px solid black;
+    height: 20px;
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+}
+
+.blank {
+    border: 2px solid black;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    width: 100%;
+}
+
+.RCheck .left {
+    margin-top: 30px;
+    margin-left: 200px;
+}
+
+.RCheck .right {
+    float: left;
+    margin-top: -100px;
+    margin-left: 600px;
+}
+
+.RCheck p {
+    font-size: 16px;
+}
+
+.RRem {
+    height: 50px;
+}
+
+.RSig {
+    margin-top: 20px;
+    height:250px;
+}
+
+    .RSig ul li {
+        list-style-type: none;
+        float: left;
+        padding-left: 100px;
+        margin-left: 100px;
+    }
+
+.Rinform {
+    margin-top: 20px;
+}
+
+    .Rinform ul li {
+        list-style-type: none;
+        float: left;
+        padding-left: 100px;
+        margin-left: 100px;
+    }
+
+.blank p {
+    text-align: center;
+}
+
+
+
+/*EmailNotification*/
+
+.EFlow {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.ERules {
+    text-decoration: underline;
+    font-size: 16px;
+}
+.Eblank {
+    border: 2px solid black;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    width: 100%;
+}
+
+
+.EContent span {
+    font-weight: bold;
+}

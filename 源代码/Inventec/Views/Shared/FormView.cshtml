@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="/Themes/Common/Css/bootstrap.css" rel="stylesheet" />
+    <link href="/Themes/Css/site.css" rel="stylesheet" />
+    <script src="/Themes/Common/Scripts/jquery-1.10.2.js"></script>
+    <script src="/Themes/Common/Scripts/bootstrap.js"></script>
+    <script src="/Themes/Common/Scripts/respond.js"></script>
+    <script src="/Themes/Common/Scripts/modernizr-2.6.2.js"></script>
+    <link href="~/Themes/Css/@(Session["Theme"] == null ? "Black" : Session["Theme"])/FormStyle.css" rel="stylesheet" type="text/css" />
+    <link href="~/Themes/Common/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Themes/Css/Black/grr.css" rel="stylesheet" type="text/css" /> 
+    <link rel="stylesheet" href="~/Themes/Common/Scripts/jquery-file-upload/css/jquery.fileupload.css">
+    <script src="/Themes/Common/Scripts/jquery.validate.js"></script>
+    <script src="/Themes/Common/Scripts/jquery.validate.unobtrusive.js"></script>
+    <link href="/Themes/Common/Scripts/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
+    <script src="/Themes/Common/Scripts/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="/Themes/Common/Scripts/ajaxsubmit.js"></script>
+    <script src="/Themes/Common/Scripts/noty/noty.js"></script>
+    @RenderSection("css", required: false)
+    <link rel="stylesheet" href="~/Themes/Common/Scripts/artDialog/css/ui-dialog.css">
+</head>
+<body>
+    <div class="container-fluid">
+        @RenderBody()
+        <div class="form-bottom noprint">
+        </div>
+    </div>
+    <script src="/Themes/Scripts/ApplyForm.js"></script>
+    <script src="~/Themes/Common/Scripts/artDialog/dist/dialog-plus-min.js"></script>
+    <script src="~/Themes/Common/Scripts/jQuery.formatMoney.min.js"></script>
+    <script src="~/Themes/Common/Scripts/jquery.PrintArea.js"></script>
+    @RenderSection("scripts", required: false)
+    <script>
+        $(function () {
+            $(".print").click(function () {
+                $(".container-fluid").printArea();
+            });
+
+            $(window).bind('beforeunload', function () {
+                //return '您输入的内容尚未保存，确定离开此页面吗？';
+            });
+
+            $(".table td").each(function () {
+                if ($(this).find("span").size() == 3) {
+                    if ($(this).find("span").eq(0).html() != $(this).find("span").eq(2).html()) {
+                        $(this).addClass("red");
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>@(ViewBag.Title)</title>
+    <link href="/Themes/Common/Css/bootstrap.css" rel="stylesheet" />
+    <link href="/Themes/Css/site.css" rel="stylesheet" />
+    <link href="~/Themes/Common/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="/Themes/Common/Scripts/modernizr-2.6.2.js"></script>
+    <script src="/Themes/Common/Scripts/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="~/Themes/Common/Scripts/artDialog/css/ui-dialog.css">
+    @RenderSection("css", required: false)
+</head>
+<body>
+    <div class="container">
+        @RenderBody()
+    </div>
+    
+    <script src="/Themes/Common/Scripts/bootstrap.js"></script>
+    <script src="/Themes/Common/Scripts/respond.js"></script>
+    <script src="/Themes/Common/Scripts/jquery.validate.js"></script>
+    <script src="/Themes/Common/Scripts/jquery.validate.unobtrusive.js"></script>
+    <link href="/Themes/Common/Scripts/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
+    <script src="/Themes/Common/Scripts/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="/Themes/Common/Scripts/ajaxsubmit.js?ver=1"></script>
+    <script src="/Themes/Common/Scripts/noty/noty.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

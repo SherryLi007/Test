@@ -1,0 +1,71 @@
+﻿<div class="formbody">
+    <h5>File upload / 附件上传</h5>
+    <div class="uploaddiv">
+        <span class="btn btn-default btn-sm fileinput-button">
+            <i class="icon-upload-alt"></i>
+            <span> @Html.LangString("FileUpload")</span>
+            <input id="fileupload" type="file" name="files[]" multiple >
+        </span>
+        <div id="progress" class="progress" style="margin-top:5px">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+    <div class="col-md-12 col-xs-12 row">
+        <table class="table attachmentfile">
+            <thead>
+                <tr>
+                    <th>
+                        Attachment<br />
+                        附件
+                    </th>
+                    <th>
+                        File Size<br />
+                       文件大小
+                    </th>
+                    <th>
+                        Upload Users<br />
+                        上传人
+                    </th>
+                    <th>
+                        Upload Date<br />
+                        上传日期
+                    </th>
+                    <th>
+                        Action<br />
+                        操作
+                    </th>
+                </tr> 
+            </thead>
+            <tbody> 
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="/Themes/Common/Scripts/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="/Themes/Common/Scripts/jquery-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="/Themes/Common/Scripts/jquery-file-upload/js/jquery.fileupload.js"></script>
+<script>
+    $(function () {
+        var url = '/Partial/Attachment';       
+        $('#fileupload').fileupload({     
+            url: url,
+            dataType:'json',
+            done: function (e, data) {
+                if (data.result.status == 1) {
+                    $(".attachmentfile tbody").append("<tr><td><a href='" + data.result.url.split("|")[0] + "'>" + data.result.url.split("|")[4] + "</a></td>" + "<td>" + data.result.url.split("|")[1] + "KB" + "</td>" + "<td>" + data.result.url.split("|")[2] + "</td>" + "<td>" + data.result.url.split("|")[3] + "</td>" + "<td>" + "" + "<i class='icon-trash icon-large delbtn del'></i>" + "<input type='hidden' name='attachmentid' value='" + data.result.url.split("|")[5] + "'></td></tr>")
+                    $(".attachmentfile .delbtn").bind("click", function () {
+                        $(this).parent().parent().remove(); 
+                    });
+                }
+            },
+            progressall: function (e, data) {
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                $('#progress .progress-bar').css(
+                    'width',
+                    progress + '%'
+                );
+            }
+        }).prop('disabled', !$.support.fileInput)
+            .parent().addClass($.support.fileInput ? undefined : 'disabled');
+    });
+</script>

@@ -1,0 +1,277 @@
+﻿@model IEnumerable<PorscheBPM.Models.SecMenu>
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    <link href="~/Themes/Common/css/Fontawesone/css/font-awesome.min.css" rel="stylesheet" />
+}
+
+<div class="col-md-12 col-lg-12 col-xl-12">
+    <div class="iconpanel">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="icon-tasks"></i> @Html.LangString("MyApplication")</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-4 col-lg-4 col-xl-4">
+                    <section class="panel panel-featured-left panel-featured-primary">
+                        <div class="panel-body">
+                            <div class="widget-summary">
+                                <div class="widget-summary-col widget-summary-col-icon">
+                                    <a href="@Url.Action("MyRequest","MyForm")">
+                                        <div class="summary-icon bg-primary">
+                                            <i class="fa fa-refresh"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="widget-summary-col">
+                                    <div class="summary">
+                                        <h4 class="title">  @Html.LangString("InProcess") </h4>
+                                        <div class="info">
+                                            <i class="icon-edit icon-large"></i> <a href="@Url.Action("MyRequest","MyForm")">
+                                                <strong class="amount inprocess"><i class="fa fa-spinner fa-pulse fa-fw"></i> @Html.LangString("Items")</strong>
+                                            </a>
+                                        </div>
+                                        <div class="summary-footer">
+                                            <a class="text-muted text-uppercase" href="@Url.Action("MyRequest", "MyForm")"> @Html.LangString("ViewAll")</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-4 col-lg-4 col-xl-4">
+                    <section class="panel panel-featured-left panel-featured-tertiary">
+                        <div class="panel-body">
+                            <div class="widget-summary">
+                                <div class="widget-summary-col widget-summary-col-icon">
+                                    <a href="@Url.Action("MyRequestReject", "MyForm")">
+                                        <div class="summary-icon bg-tertiary">
+                                            <i class="fa fa-reply"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="widget-summary-col">
+                                    <div class="summary">
+                                        <h4 class="title">  @Html.LangString("Rejected")</h4>
+                                        <div class="info">
+                                            <i class="icon-edit icon-large"></i> <a href="@Url.Action("MyRequestReject", "MyForm")"><strong class="amount rejected"><i class="fa fa-spinner fa-pulse fa-fw"></i> @Html.LangString("Items")</strong></a>
+                                        </div>
+                                    </div>
+                                    <div class="summary-footer">
+                                        <a class="text-muted text-uppercase" href="@Url.Action("MyRequestReject", "MyForm")"> @Html.LangString("ViewAll")</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-4 col-lg-4 col-xl-4">
+                    <section class="panel panel-featured-left panel-featured-secondary">
+                        <div class="panel-body">
+                            <div class="widget-summary">
+                                <div class="widget-summary-col widget-summary-col-icon">
+                                    <a href="@Url.Action("Draft","MyForm")">
+                                        <div class="summary-icon bg-secondary">
+                                            <i class="fa fa-hourglass"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="widget-summary-col">
+                                    <div class="summary">
+                                        <h4 class="title"> @Html.LangString("DraftBox")</h4>
+                                        <div class="info">
+                                            <i class="icon-edit icon-large"></i> <a href="@Url.Action("Draft","MyForm")"><strong class="amount draft"><i class="fa fa-spinner fa-pulse fa-fw"></i>  @Html.LangString("Items")</strong></a>
+                                        </div>
+                                    </div>
+                                    <div class="summary-footer">
+                                        <a class="text-muted text-uppercase" href="@Url.Action("Draft","MyForm")"> @Html.LangString("ViewAll")</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (ViewBag.ShowApprove == true || ViewBag.ShowFinanceApprove == true)
+{
+    <div class="col-md-12 col-lg-12 col-xl-12">
+        <div class="iconpanel">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="icon-tasks"></i> @Html.LangString("MyApproval")</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-4 col-lg-4 col-xl-4">
+                        <section class="panel panel-featured-left panel-featured-primary">
+                            <div class="panel-body">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <a href="@Url.Action("ApproveList", "MyForm")">
+                                            <div class="summary-icon bg-primary">
+                                                <i class="fa fa-spinner"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title">  @Html.LangString("InProcess") </h4>
+                                            @if (ViewBag.ShowApprove == true)
+                                            {
+                                                <div class="info">
+                                                    <i class="icon-tasks icon-large"></i> <a href="@Url.Action("ApproveList", "MyForm")"><strong class="amount approvelist"><i class="fa fa-spinner fa-pulse fa-fw"></i> @Html.LangString("Items")</strong></a>
+                                                </div>
+                                            }
+                                            @if (ViewBag.ShowFinanceApprove == true)
+                                            {
+                                                <div class="info">
+                                                    <i class="icon-tasks icon-large"></i> <a href="@Url.Action("FinanceApproveList", "MyForm")"><strong class="amount financeapprovelist"><i class="fa fa-spinner fa-pulse fa-fw"></i> @Html.LangString("Items")</strong></a>
+                                                </div>
+                                            }
+                                        </div>
+                                        <div class="summary-footer">
+                                            <a class="text-muted text-uppercase" href="@Url.Action("ApproveList", "MyForm")"> @Html.LangString("ViewAll")</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl-4">
+                        <section class="panel panel-featured-left panel-featured-tertiary">
+                            <div class="panel-body">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <a href="@Url.Action("ApproveReject","MyForm")">
+                                            <div class="summary-icon bg-tertiary">
+                                                <i class="fa fa-reply-all"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title">  @Html.LangString("Rejected")</h4>
+                                            @if (ViewBag.ShowApprove == true)
+                                            {
+                                                <div class="info">
+                                                    <i class="icon-tasks icon-large"></i> <a href="@Url.Action("ApproveReject","MyForm")"><strong class="amount approvereject"><i class="fa fa-spinner fa-pulse fa-fw"></i> @Html.LangString("Items")</strong></a>
+                                                </div>
+                                            }
+                                            @if (ViewBag.ShowFinanceApprove == true)
+                                            {
+                                                <div class="info">
+                                                    <i class="icon-tasks icon-large"></i> <a href="@Url.Action("FinanceApproveReject", "MyForm")"><strong class="amount financeapprovereject"><i class="fa fa-spinner fa-pulse fa-fw"></i> @Html.LangString("Items")</strong></a>
+                                                </div>
+                                            }
+                                        </div>
+                                        <div class="summary-footer">
+                                            <a class="text-muted text-uppercase" href="@Url.Action("ApproveReject", "MyForm")"> @Html.LangString("ViewAll")</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl-4">
+                        <section class="panel panel-featured-left panel-featured-secondary">
+                            <div class="panel-body">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <a href="@Url.Action("Approved", "MyForm")">
+                                            <div class="summary-icon bg-secondary">
+                                                <i class="fa fa-thumbs-up"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title"> @Html.LangString("TaskStatus_Completed")</h4>
+                                            @if (ViewBag.ShowApprove == true)
+                                            {
+                                                <div class="info">
+                                                    <i class="icon-tasks icon-large"></i>  <a href="@Url.Action("Approved", "MyForm")"><strong class="amount approvalapproved"><i class="fa fa-spinner fa-pulse fa-fw"></i>  @Html.LangString("Items")</strong></a>
+                                                </div>
+                                            }
+                                            @if (ViewBag.ShowFinanceApprove == true)
+                                            {
+                                                <div class="info">
+                                                    <i class="icon-tasks icon-large"></i>  <a href="@Url.Action("FinanceApproved", "MyForm")"><strong class="amount finaceapproved"><i class="fa fa-spinner fa-pulse fa-fw"></i>  @Html.LangString("Items")</strong></a>
+                                                </div>
+                                            }
+                                        </div>
+                                        <div class="summary-footer">
+                                            <a class="text-muted text-uppercase" href="@Url.Action("Approved", "MyForm")"> @Html.LangString("ViewAll")</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="col-md-12 col-lg-12 col-xl-12">
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-xl-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="icon-tasks"></i> @Html.LangString("NewApplication")</h3>
+                </div>
+                <div class="panel-body">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-4 col-lg-4 col-xl-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><i class="icon-reorder"></i> @(Session["Lang"] == "zh-CN" ? item.displayname : item.menuname)</h3>
+                                </div>
+                                <div class="panel-body">
+                                    @foreach (var submenu in item.sec_menu1 as IEnumerable<PorscheBPM.Models.SecMenu>)
+                                    {                            
+                                        if (!String.IsNullOrEmpty(submenu.url))
+                                        {
+                                            <a href="@submenu.url" target="_blank"><li><i class="icon-double-angle-right"></i> @(Session["Lang"] == "zh-CN" ? submenu.displayname : submenu.menuname)</li></a>
+                                        }
+                                        else
+                                        {
+                                            <li><i class="icon-double-angle-right"></i> @(Session["Lang"] == "zh-CN" ? submenu.displayname : submenu.menuname)</li>
+                                        }                                        
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+    $(function () {
+        $.post("@Url.Action("GetCount")", {}, function (data) {
+            var data = eval('(' + data + ')');
+            $(".finaceapproved").html(data.FinanceApproved + " @Html.LangString("Items")");
+            $(".approvelist").html(data.ApprovalInProcess + " @Html.LangString("Items")");
+            $(".approvereject").html(data.ApprovalRejected + " @Html.LangString("Items")");
+            $(".approvalapproved").html(data.ApprovalApproved + " @Html.LangString("Items")");
+            $(".financeapprovelist").html(data.FinanceInProcess + " @Html.LangString("Items")");
+            $(".financeapprovereject").html(data.FinanceRejected + " @Html.LangString("Items")");
+            $(".finaceapproved").html(data.FinanceApproved + " @Html.LangString("Items")");
+            $(".inprocess").html(data.InProcess + " @Html.LangString("Items")");
+            $(".rejected").html(data.Rejected + " @Html.LangString("Items")");
+            $(".draft").html(data.Draft + " @Html.LangString("Items")");
+        });
+    });
+</script>
+}

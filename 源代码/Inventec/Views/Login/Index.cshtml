@@ -1,0 +1,161 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" />
+    <title>英业达无纸化办公系统</title>
+    <link href="/Themes/Common/Css/bootstrap.css" rel="stylesheet" />
+    <link href="/Themes/Css/login.css" rel="stylesheet" />
+    <script src="/Themes/Common/Scripts/jquery-1.10.2.js"></script>
+    <link href="/Themes/Common/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="/Themes/Common/Scripts/jquery.cookie.js"></script>
+    <script src="/Themes/Common/Scripts/jquery.validate.js"></script>
+    <script src="/Themes/Common/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="/Themes/Common/Scripts/ajaxsubmit.js"></script>
+    <script src="/Themes/Common/Scripts/noty/noty.js"></script>
+    <script src="/Themes/Common/Scripts/bootstrap.min.js"></script>
+    <link href="/Themes/Common/css/animate.css" rel="stylesheet" />
+</head>
+<body>
+    @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { Class = "loginform" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="top">
+            <div class="logo"><img src="~/Themes/Images/logo.jpg" /></div>
+            <div class="lang">
+                @Html.ActionLink("简", "CN", new { Controller = "Login" })
+                @Html.ActionLink("繁", "TW", new { Controller = "Login" })
+            </div>
+        </div>
+        <div class="loginbody">
+            <div class="loginbanner">
+                <div class="loginpic" style="background:url('/Themes/Images/login_bg_1.jpg') no-repeat center center"></div>
+                <div class="loginpic" style="background:url('/Themes/Images/login_bg_2.jpg') no-repeat center center"></div>
+                <div class="loginpic" style="background:url('/Themes/Images/login_bg_3.jpg') no-repeat center center"></div>
+                <div class="loginpic" style="background:url('/Themes/Images/login_bg_4.jpg') no-repeat center center"></div>
+                <div class="loginpic" style="background:url('/Themes/Images/login_bg_5.jpg') no-repeat center center"></div>
+                <div class="loginpic" style="background:url('/Themes/Images/login_bg_6.jpg') no-repeat center center"></div>
+                <div class="loginpic" style="background:url('/Themes/Images/login_bg_7.jpg') no-repeat center center"></div>
+                <ul class="home_number">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="logindiv">
+                <h3>@Html.LangString("LoginTitle")</h3>
+                <div class="input">
+                    <input type="text" id="username" name="username" class="form-control required" placeholder="@Html.LangString("PleaseLoginInput")" value="@ViewBag.UserName" />
+                    <span class="login-icon"><i class="icon-user"></i></span>
+                </div>
+                <div class="input">
+                    <input type="password" id="userpassword" name="userpassword" class="form-control required" />
+                    <span class="login-icon"><i class="icon-key"></i></span>
+                </div>
+                <div class="input">
+                    @Html.DropDownList("company", null, @Html.LangString("PleaseSelectCompany"), htmlAttributes: new { @class = "form-control required" })
+                    <span class="login-icon"><i class="icon-sitemap"></i></span>
+                </div>
+                <div class="input">
+                    <div class="remberme"><label class="checkbox-inline"><input type="checkbox" id="remberMe" name="remberMe" value="1" @(ViewBag.Remember == "1" ? "checked" : "") /> @Html.LangString("RemeberMe")</label></div>
+                    <div class="loginbutton">
+                        <a class="btn btn-danger btn-block ajax-post btn-login" target-form="loginform"><i class="icon-signin"></i> @Html.LangString("Login")</a>
+                    </div>
+                </div>
+                <div class="input loginbottom">
+                    <h4>@Html.LangString("Forgotpassword")</h4>
+                    <span><a href="" data-toggle="modal" data-target="#forget">@Html.LangString("ForgotpasswordRemark")</a></span>
+                </div>
+                <div class="loginhelp">
+                    @Html.LangString("HowtoUse")
+                    <div class="loginhelpright"><a href="javascript:void()">提示</a></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="logincopy">
+            &copy;2015-2017 @Html.LangString("CopyRight")
+        </div>
+        @Html.Hidden("processname", "Login")
+    }
+
+    @using (Html.BeginForm("ForgetPassword", "Login", FormMethod.Post, new { Class = "forgetform" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="modal fade" id="forget" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">忘记密码</h4>
+                    </div>
+                    <div class="modal-body">
+                        请输入您的邮箱地址：<br /><br />
+                        <div class="input">
+                            <input type="text" id="usermail" name="usermail" class="form-control required" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-danger ajax-post" target-form="forgetform"><i class="icon-envelope"></i> @Html.LangString("Send")</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <script type="text/javascript">
+        $(function () {
+            $(document).keydown(function (event) {
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if (keycode == '13') {
+                    $(".btn-login").click();
+                }
+            });
+
+            var i = 0;
+            $(".home_number li").eq(0).addClass("active");
+            $(".loginpic").eq(0).show();
+            $(".loginbanner").css("background", $(".loginpic").eq(0).css("background-image") + "  no-repeat center center");
+            setInterval(function () {
+                $(".home_number li").removeClass("active");
+                $(".loginpic").hide();
+                i = i + 1;
+                if (i >= 7) {
+                    i = 0;
+                }
+                $(".home_number li").eq(i).addClass("active");
+                $(".loginpic").eq(i).show().addClass("animated fadeIn");
+                $(".loginpic").eq(i).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+                    function () {
+                        $(".loginbanner").css("background", $(".loginpic").eq(i).css("background-image") + "  no-repeat center center");
+                        $(".loginpic").eq(i).removeClass("animated fadeIn");
+                    });
+            }, 5000);
+
+            $(".home_number li").click(function () {
+                i = $(this).index();
+                $(".home_number li").removeClass("active");
+                $(this).addClass("active");
+                $(".loginpic").hide();
+                $(".loginpic").eq(i).show().addClass("animated zoomInLeft");
+                $(".loginpic").eq(i).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+                    function () {
+                        $(".loginbanner").css("background", $(".loginpic").eq(i).css("background-image") + "  no-repeat center center");
+                        $(".loginpic").eq(i).removeClass("animated zoomInLeft");
+                    });
+            });
+        });
+
+    </script>
+    <link href="~/Themes/Common/Scripts/artDialog/css/ui-dialog.css" rel="stylesheet" />
+    <script src="~/Themes/Common/Scripts/artDialog/dist/dialog-plus-min.js"></script>
+</body>
+</html>

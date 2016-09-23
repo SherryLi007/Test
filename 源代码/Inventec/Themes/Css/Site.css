@@ -1,0 +1,504 @@
+﻿.clear {
+    clear: both;
+}
+
+.hidden {
+    display: none;
+}
+
+.needed {
+    border-left: 3px solid #cb202c;
+}
+
+.formbody {
+    float: left;
+    width: 100%;
+}
+
+    .formbody h5 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        float: left;
+    }
+
+        .formbody h5.title {
+            width: 100%;
+            padding-bottom: 0px;
+        }
+
+    .formbody .row {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        float: left;
+    }
+
+.approvearea .row {
+    padding: 0px;
+}
+
+.formtable {
+    border-top: 1px solid #D5D5D5;
+    border-right: 1px solid #D5D5D5;
+    border-left: 1px solid #D5D5D5;
+    border-collapse: collapse;
+    float: left;
+    width: 100%;
+}
+
+    .formtable .form-group {
+        border-bottom: 1px solid #D5D5D5;
+        margin-bottom: 0px;
+        padding: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .formtable .control-label {
+        font-weight: normal;
+        text-align: left;
+        background: #f6f6f6;
+        display: inline-block;
+        height: 50px;
+    }
+
+    .formtable .control-areatext-label {
+        font-weight: normal;
+        text-align: left;
+        background: #f6f6f6;
+        display: inline-block;
+        height: 77px;
+        margin-bottom: 0px;
+    }
+
+    .formtable .control-text {
+        font-weight: normal;
+        text-align: left;
+        background: #fff;
+        display: inline-block;
+        height: 50px;
+    }
+
+    .formtable .label-big {
+        height: 78px;
+    }
+
+    .formtable .form-group [class^="col-md-"] {
+        padding: 8px 10px;
+    }
+
+    .formtable input.form-control, .formtable select.form-control {
+        margin-top: 3px;
+    }
+
+    .formtable .input-group input.form-control {
+        margin-top: 0px;
+    }
+
+.input-group-addon {
+    cursor: pointer;
+}
+
+.submit {
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.progress {
+    margin-top: 5px;
+    height: 10px;
+}
+
+.count {
+    float: right;
+}
+
+.table tbody > tr > td {
+    padding: 4px 8px;
+    vertical-align: middle;
+}
+
+    .table tbody > tr > td.td-btn {
+        padding: 3px;
+        text-align: center;
+    }
+
+.table th {
+    white-space: nowrap;
+}
+
+.table .td-btn .btn {
+    border: 0px;
+}
+
+.page-header {
+    margin: 0 0 10px 0px;
+}
+
+.approveimage {
+    width: 100%;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.page-content {
+    padding-top: 10px;
+}
+
+/**表单提交页面**/
+.editbtn, .delbtn, .newdelbtn {
+    cursor: pointer;
+}
+
+.updatebtn {
+    display: none;
+}
+
+.detailtable .current {
+    background: #f6f6f6;
+}
+
+.uploaddiv {
+    float: left;
+    width: 100%;
+}
+
+.form-bottom {
+    width: 100%;
+    background: #f2f3f5;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+
+    .form-bottom img {
+        margin: 0 auto;
+    }
+
+/**列表页面**/
+.panel-nomargin {
+    margin-bottom: 5px;
+}
+
+    .panel-nomargin .panel-body {
+        padding: 5px 15px;
+    }
+
+    .panel-nomargin .col-md-1, .panel-nomargin .col-md-2 {
+        padding: 5px;
+        min-width: 100px;
+    }
+
+    .panel-nomargin .search-label {
+        line-height: 30px;
+        margin-bottom: 0px;
+        text-align: left;
+        padding-right: 0px;
+        padding-left: 15px;
+    }
+
+.search-button {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.datediv {
+    padding-right: 0px;
+}
+
+/**首页**/
+.iconpanel .panel {
+    background: #FFFFFF;
+    border: medium none;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.iconpanel > .panel {
+    border: 1px solid #DDD;
+    border-radius: 3px;
+}
+
+.iconpanel .panel-featured-left {
+    border-left: 3px solid #33353F;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.iconpanel .panel-featured-primary {
+    border-color: #2266ac;
+}
+
+.iconpanel .panel-featured-secondary {
+    border-color: #3e4146;
+}
+
+.iconpanel .panel-featured-tertiary {
+    border-color: #bf3221;
+}
+
+.iconpanel .panel-featured-gray .panel-body {
+    background: #f2f2f2;
+}
+
+.iconpanel .panel-featured-left .panel-body {
+    background: #F2F2F2;
+    border-radius: 10px;
+}
+
+.applicationpanel .panel {
+    margin-top: 15px;
+}
+
+    .applicationpanel .panel li {
+        float: left;
+        width: 25%;
+    }
+
+.applicationpanel .panel-body {
+    padding: 20px;
+}
+
+.bg-primary {
+    background: #2266ac none repeat scroll 0% 0%;
+}
+
+.bg-secondary {
+    background: #3e4146 none repeat scroll 0% 0%;
+}
+
+.bg-tertiary {
+    background: #bf3221 none repeat scroll 0% 0%;
+}
+
+.widget-summary .summary-icon {
+    margin-right: 15px;
+    font-size: 4.2rem;
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    color: #FFF;
+    border-radius: 15px;
+}
+
+    .widget-summary .summary-icon img {
+        width: 60%;
+        margin-top: -10px;
+    }
+
+.widget-summary {
+    display: table;
+    width: 100%;
+}
+
+    .widget-summary .widget-summary-col {
+        display: table-cell;
+        vertical-align: top;
+        width: 100%;
+    }
+
+        .widget-summary .widget-summary-col.widget-summary-col-icon {
+            width: 1%;
+        }
+
+    .widget-summary .summary .info {
+        font-size: 1.2rem;
+        line-height: 2.5rem;
+    }
+
+    .widget-summary .summary-footer {
+        padding: 5px 0px 0px;
+        border-top: 1px dotted #DDD;
+        text-align: right;
+    }
+
+.panel-body li {
+    list-style: none;
+    padding-left: 10px;
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.center {
+    text-align: center;
+}
+/**树视图**/
+.ztree {
+    overflow: auto;
+}
+
+    .ztree li {
+        padding-left: 0px;
+    }
+
+/**搜索页面**/
+.searchlisttable, .searchnolisttable {
+    min-width: 500px;
+}
+
+    .searchlisttable tr {
+        cursor: pointer;
+        text-wrap: none;
+    }
+
+.requiretip {
+    background-color: #cb202c;
+    margin: 1px;
+    height: 10px;
+    margin-top: -5px;
+}
+
+.form-icon div {
+    float: left;
+    margin-right: 20px;
+    width: 100px;
+    text-align: center;
+    color: #000;
+}
+
+.form-icon span {
+    width: 100%;
+    padding-top: 10px;
+    float: left;
+}
+
+.form-icon div.icon {
+    float: left;
+    border: #f2f2f2 2px solid;
+    width: 100px;
+    padding: 10px 10px;
+    background: #2264a7;
+    border-radius: 15px;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.05);
+}
+
+    .form-icon div.icon img {
+        width: 60%;
+        padding-bottom: 5px;
+    }
+
+
+.red {
+    color: #cb202c;
+    font-size: 12px;
+}
+
+.morecondition {
+    display: none;
+}
+
+.formtips {
+    padding-top: 10px;
+    float: right;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.urgency {
+    float: right;
+    font-weight: bold;
+    color: #cb202c;
+}
+
+/*Bootstrap Change*/
+.radio-inline input[type="radio"],
+.checkbox-inline input[type="checkbox"] {
+    margin-top: 2px;
+}
+
+@media print {
+    .formtable {
+        border-left: 0px;
+    }
+
+    .control-label {
+        border-right: 1px solid #dddddd;
+        border-left: 1px solid #dddddd;
+    }
+
+    .noprint {
+        display: none;
+    }
+
+    .detailtable {
+        border: 1px solid #dddddd;
+    }
+
+        .detailtable > thead > tr > th,
+        .detailtable > tbody > tr > th,
+        .detailtable > tfoot > tr > th,
+        .detailtable > thead > tr > td,
+        .detailtable > tbody > tr > td,
+        .detailtable > tfoot > tr > td {
+            border: 1px solid #dddddd;
+        }
+
+        .detailtable > thead > tr > th,
+        .detailtable > thead > tr > td {
+            border-bottom-width: 2px;
+        }
+
+    .FormTop {
+        margin-top: 30px;
+        vertical-align: bottom;
+        padding-top: 20px;
+    }
+
+    .FormMain {
+        padding: 0px;
+    }
+
+    .barcode {
+        position: absolute;
+        right: 0px;
+        top: -100px;
+    }
+}
+
+.col-md-2 .btn-xs {
+    margin-top: 8px;
+}
+
+.urgent > td {
+    color: #bf3221 !important;
+}
+
+.auto td {
+    color: #adacac;
+}
+
+.sharebg {
+    display: none;
+    width: 100%;
+    z-index: 500;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: #808080;
+    filter: alpha(opacity:30);
+    opacity: 0.3;
+}
+
+.sharediv {
+    display: none;
+    width: 800px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -400px;
+    margin-top: -200px;
+    z-index: 1000;
+}
+
+.input-group-addon-1 {border-radius:0px !important;}
+
+.multiCondition {display:none;position:absolute;width:100%;padding:20px;background:#fff;z-index:200;top:0px;left:0px;border:1px solid #dddddd;}
+.multiCondition .row {margin-bottom:20px;}

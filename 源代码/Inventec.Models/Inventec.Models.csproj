@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0FD21725-6A28-4AB0-A30C-5816FAD942F0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inventec.Models</RootNamespace>
+    <AssemblyName>Inventec.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BdLog.cs" />
+    <Compile Include="BdMasterdata.cs" />
+    <Compile Include="ComLog.cs" />
+    <Compile Include="ComMessagequeue.cs" />
+    <Compile Include="ComSerialno.cs" />
+    <Compile Include="InventecbizContext.cs" />
+    <Compile Include="Mapping\BdLogMap.cs" />
+    <Compile Include="Mapping\BdMasterdataMap.cs" />
+    <Compile Include="Mapping\ComLogMap.cs" />
+    <Compile Include="Mapping\ComMessagequeueMap.cs" />
+    <Compile Include="Mapping\ComSerialnoMap.cs" />
+    <Compile Include="Mapping\OrgDepartmentMap.cs" />
+    <Compile Include="Mapping\OrgGroupMap.cs" />
+    <Compile Include="Mapping\OrgGroupmemberMap.cs" />
+    <Compile Include="Mapping\OrgJobgradeMap.cs" />
+    <Compile Include="Mapping\OrgJobgroupMap.cs" />
+    <Compile Include="Mapping\OrgJobMap.cs" />
+    <Compile Include="Mapping\OrgOrganizationMap.cs" />
+    <Compile Include="Mapping\OrgUserMap.cs" />
+    <Compile Include="Mapping\ProcInventecFeederlistDtMap.cs" />
+    <Compile Include="Mapping\ProcInventecFeederlistMap.cs" />
+    <Compile Include="Mapping\ProcInventecMfgDtMap.cs" />
+    <Compile Include="Mapping\ProcInventecMfgMap.cs" />
+    <Compile Include="Mapping\ProcInventecPcbaDtMap.cs" />
+    <Compile Include="Mapping\ProcInventecPcbaMap.cs" />
+    <Compile Include="Mapping\ProcInventecSmtDt1Map.cs" />
+    <Compile Include="Mapping\ProcInventecSmtDt2Map.cs" />
+    <Compile Include="Mapping\ProcInventecSmtMap.cs" />
+    <Compile Include="Mapping\ProcInventecSocketDtMap.cs" />
+    <Compile Include="Mapping\ProcInventecSocketMap.cs" />
+    <Compile Include="Mapping\SecMenuMap.cs" />
+    <Compile Include="Mapping\SecMenurightsMap.cs" />
+    <Compile Include="Mapping\SecMenurightsmemberMap.cs" />
+    <Compile Include="Mapping\SecMenurightsobjectMap.cs" />
+    <Compile Include="Mapping\WfAgentMap.cs" />
+    <Compile Include="Mapping\WfAgentProcessMap.cs" />
+    <Compile Include="Mapping\WfApprovalhistoryMap.cs" />
+    <Compile Include="Mapping\WfAttachmentMap.cs" />
+    <Compile Include="Mapping\WfDraftMap.cs" />
+    <Compile Include="Mapping\WfFormMap.cs" />
+    <Compile Include="Mapping\WfProcesscategoryMap.cs" />
+    <Compile Include="Mapping\WfProcessfieldMap.cs" />
+    <Compile Include="Mapping\WfProcessMap.cs" />
+    <Compile Include="Mapping\WfProcessstepMap.cs" />
+    <Compile Include="Mapping\WfProcessstepsstatusMap.cs" />
+    <Compile Include="OrgDepartment.cs" />
+    <Compile Include="OrgGroup.cs" />
+    <Compile Include="OrgGroupmember.cs" />
+    <Compile Include="OrgJob.cs" />
+    <Compile Include="OrgJobgrade.cs" />
+    <Compile Include="OrgJobgroup.cs" />
+    <Compile Include="OrgOrganization.cs" />
+    <Compile Include="OrgUser.cs" />
+    <Compile Include="ProcInventecFeederlist.cs" />
+    <Compile Include="ProcInventecFeederlistDt.cs" />
+    <Compile Include="ProcInventecMfg.cs" />
+    <Compile Include="ProcInventecMfgDt.cs" />
+    <Compile Include="ProcInventecPcba.cs" />
+    <Compile Include="ProcInventecPcbaDt.cs" />
+    <Compile Include="ProcInventecSmt.cs" />
+    <Compile Include="ProcInventecSmtDt1.cs" />
+    <Compile Include="ProcInventecSmtDt2.cs" />
+    <Compile Include="ProcInventecSocket.cs" />
+    <Compile Include="ProcInventecSocketDt.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Result.cs" />
+    <Compile Include="SecMenu.cs" />
+    <Compile Include="SecMenurights.cs" />
+    <Compile Include="SecMenurightsmember.cs" />
+    <Compile Include="SecMenurightsobject.cs" />
+    <Compile Include="UltimusContext.cs" />
+    <Compile Include="WfAgent.cs" />
+    <Compile Include="WfAgentProcess.cs" />
+    <Compile Include="WfApprovalhistory.cs" />
+    <Compile Include="WfAttachment.cs" />
+    <Compile Include="WfDraft.cs" />
+    <Compile Include="WfForm.cs" />
+    <Compile Include="WfProcess.cs" />
+    <Compile Include="WfProcesscategory.cs" />
+    <Compile Include="WfProcessfield.cs" />
+    <Compile Include="WfProcessstep.cs" />
+    <Compile Include="WfProcessstepsstatus.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,1160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{21A5A58A-56DB-4458-86F7-3850FA126F90}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inventec</RootNamespace>
+    <AssemblyName>Inventec</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\en_US.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>en_US.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\zh_CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>zh_CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\zh_TW.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>zh_TW.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Filter\AuthorizeFilterAttribute.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\LangHelper.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Themes\Common\Css\animate.css" />
+    <Content Include="Themes\Common\Css\bootstrap.css" />
+    <Content Include="Themes\Common\Css\bootstrap.min.css" />
+    <Content Include="Themes\Common\Css\font-awesome-ie7.min.css" />
+    <Content Include="Themes\Common\Css\font-awesome.min.css" />
+    <Content Include="Themes\Common\Css\Fontawesone\css\font-awesome.min.css" />
+    <Content Include="Themes\Common\Css\Fontawesone\fonts\fontawesome-webfont.svg" />
+    <Content Include="Themes\Common\Css\jquery-ui-1.10.3.full.min.css" />
+    <Content Include="Themes\Common\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Themes\Common\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Themes\Common\Scripts\ajaxsubmit.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\amcharts.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\funnel.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\gantt.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\gauge.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIcon.gif" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconBlack.gif" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconH.gif" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconHBlack.gif" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRectBig.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRectBig.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRectBigBlack.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRectBigBlack.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRectBigBlackH.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRectBigBlackH.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRectBigH.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRectBigH.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRectSmall.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRectSmall.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRectSmallBlack.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRectSmallBlack.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRectSmallBlackH.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRectSmallBlackH.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRectSmallH.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRectSmallH.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRoundBig.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRoundBig.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRoundBigBlack.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRoundBigBlack.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRoundBigBlackH.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRoundBigBlackH.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRoundBigH.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRoundBigH.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRoundSmall.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRoundSmall.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRoundSmallBlack.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRoundSmallBlack.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRoundSmallBlackH.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRoundSmallBlackH.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRoundSmallH.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\dragIconRoundSmallH.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\eraserIcon.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\eraserIconH.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\export.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\exportWhite.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\lens.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\lens.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\lensWhite.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\lensWhite.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\lensWhite_old.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\lens_old.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\pencilIcon.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\pencilIconH.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\xIcon.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\images\xIconH.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\az.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\bg.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\de.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\es.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\fi.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\fo.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\fr.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\hr.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\hu.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\id.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\is.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\it.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\ja.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\lt.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\lv.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\mk.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\mn.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\mt.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\nl.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\no.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\pl.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\pt.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\ro.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\ru.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\rw.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\sk.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\so.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\th.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\lang\tr.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern1.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern10.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern11.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern12.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern13.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern14.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern15.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern16.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern17.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern18.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern19.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern2.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern20.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern21.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern3.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern4.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern5.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern6.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern7.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern8.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\black\pattern9.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\chalk\pattern1.jpg" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\chalk\pattern1r.jpg" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\chalk\pattern2.jpg" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\chalk\pattern3.jpg" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\chalk\pattern4.jpg" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\chalk\pattern5.jpg" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\chalk\pattern6.jpg" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern1.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern10.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern11.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern12.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern13.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern14.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern15.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern16.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern17.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern18.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern19.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern2.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern20.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern21.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern3.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern4.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern5.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern6.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern7.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern8.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\patterns\white\pattern9.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\pie.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\dataloader.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\dataloader.min.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\gauge_json.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\map_json.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\pie_csv.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\pie_json.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\serial2_json.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\serial_csv.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\serial_json.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\serial_with_dynamic_graphs.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\stock_csv_data_and_events.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\lang\en.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\lang\lt.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\license.txt" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\export.config.advanced.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\export.config.default.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\funnel.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\gantt.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\gauge.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\images\bicycle.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\images\car.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\images\motorcycle.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\index.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\map.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\pie1.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\pie2.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\pie3.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\pie4.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\radar.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\serial1.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\serial2.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\serial3.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\stock.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\examples\xy.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\export.css" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\export.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\export.min.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\lang\de.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\lang\en.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\lang\fr.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\lang\lt.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\lang\pl.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\libs\blob.js\blob.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\libs\fabric.js\fabric.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\libs\fabric.js\fabric.min.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\libs\FileSaver.js\FileSaver.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\libs\FileSaver.js\FileSaver.min.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\libs\jszip\jszip.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\libs\jszip\jszip.min.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\libs\pdfmake\pdfmake.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\libs\pdfmake\pdfmake.min.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\libs\pdfmake\vfs_fonts.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\libs\xlsx\xlsx.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\libs\xlsx\xlsx.min.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\1.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\10.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\11.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\12.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\13.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\14.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\15.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\16.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\17.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\18.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\19.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\2.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\20.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\21.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\22.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\23.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\24.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\25.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\26.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\27.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\28.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\29.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\3.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\30.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\31.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\4.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\5.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\6.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\7.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\8.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\shapes\9.svg" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\examples\funnel.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\examples\gantt.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\examples\gauge.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\examples\images\bicycle.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\examples\images\car.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\examples\images\motorcycle.png" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\examples\index.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\examples\map.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\examples\pie1.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\examples\pie2.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\examples\pie3.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\examples\radar.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\examples\serial1.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\examples\serial2.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\examples\serial3.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\examples\stock.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\examples\xy.html" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\license.txt" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\responsive.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\responsive.min.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\radar.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\serial.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\themes\black.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\themes\chalk.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\themes\dark.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\themes\light.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\themes\patterns.js" />
+    <Content Include="Themes\Common\Scripts\amcharts\xy.js" />
+    <Content Include="Themes\Common\Scripts\artDialog\css\ui-dialog.css" />
+    <Content Include="Themes\Common\Scripts\artDialog\dialog-login-min.js" />
+    <Content Include="Themes\Common\Scripts\artDialog\dist\dialog-min.js" />
+    <Content Include="Themes\Common\Scripts\artDialog\dist\dialog-plus-min.js" />
+    <Content Include="Themes\Common\Scripts\artDialog\dist\dialog-plus.js" />
+    <Content Include="Themes\Common\Scripts\artDialog\dist\dialog.js" />
+    <Content Include="Themes\Common\Scripts\artDialog\src\dialog-config.js" />
+    <Content Include="Themes\Common\Scripts\artDialog\src\dialog-plus.js" />
+    <Content Include="Themes\Common\Scripts\artDialog\src\dialog.js" />
+    <Content Include="Themes\Common\Scripts\artDialog\src\drag.js" />
+    <Content Include="Themes\Common\Scripts\artDialog\src\global_modules\jquery.js" />
+    <Content Include="Themes\Common\Scripts\artDialog\src\popup.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\css\datepicker3.css" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.az.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.ua.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\js\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap.js" />
+    <Content Include="Themes\Common\Scripts\bootstrap.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\css\dataTables.bootstrap.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\css\dataTables.foundation.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\css\dataTables.foundation.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\css\dataTables.jqueryui.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\css\jquery.dataTables.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\css\jquery.dataTables.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\css\autoFill.bootstrap.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\css\autoFill.bootstrap.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\css\autoFill.dataTables.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\css\autoFill.dataTables.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\css\autoFill.foundation.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\css\autoFill.foundation.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\css\autoFill.jqueryui.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\css\autoFill.jqueryui.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\examples\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\examples\initialisation\alwaysAsk.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\examples\initialisation\columns.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\examples\initialisation\events.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\examples\initialisation\fills.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\examples\initialisation\focus.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\examples\initialisation\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\examples\initialisation\keyTable.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\examples\initialisation\plugins.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\examples\initialisation\scrolling.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\examples\initialisation\simple.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\examples\styling\bootstrap.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\examples\styling\foundation.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\examples\styling\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\examples\styling\jqueryui.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\js\autoFill.bootstrap.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\js\autoFill.bootstrap.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\js\autoFill.foundation.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\js\autoFill.foundation.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\js\autoFill.jqueryui.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\js\autoFill.jqueryui.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\js\dataTables.autoFill.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\js\dataTables.autoFill.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\License.txt" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\css\buttons.bootstrap.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\css\buttons.bootstrap.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\css\buttons.dataTables.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\css\buttons.dataTables.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\css\buttons.foundation.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\css\buttons.foundation.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\css\buttons.jqueryui.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\css\buttons.jqueryui.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\api\addRemove.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\api\enable.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\api\group.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\api\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\api\text.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\column_visibility\columnGroups.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\column_visibility\columns.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\column_visibility\columnsToggle.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\column_visibility\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\column_visibility\layout.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\column_visibility\restore.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\column_visibility\simple.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\column_visibility\text.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\flash\copyi18n.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\flash\filename.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\flash\hidden.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\flash\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\flash\pdfMessage.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\flash\pdfPage.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\flash\simple.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\flash\swfPath.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\flash\tsv.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\html5\columns.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\html5\copyi18n.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\html5\filename.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\html5\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\html5\pdfImage.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\html5\pdfMessage.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\html5\pdfOpen.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\html5\pdfPage.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\html5\simple.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\html5\tsv.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\initialisation\className.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\initialisation\collections.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\initialisation\custom.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\initialisation\export.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\initialisation\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\initialisation\keys.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\initialisation\multiple.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\initialisation\new.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\initialisation\plugins.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\initialisation\simple.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\print\autoPrint.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\print\columns.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\print\customisation.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\print\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\print\message.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\print\select.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\print\simple.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\styling\bootstrap.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\styling\foundation.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\styling\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\examples\styling\jqueryui.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\js\buttons.bootstrap.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\js\buttons.bootstrap.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\js\buttons.colVis.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\js\buttons.colVis.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\js\buttons.flash.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\js\buttons.flash.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\js\buttons.foundation.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\js\buttons.foundation.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\js\buttons.html5.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\js\buttons.html5.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\js\buttons.jqueryui.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\js\buttons.jqueryui.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\js\buttons.print.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\js\buttons.print.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\js\dataTables.buttons.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\js\dataTables.buttons.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\License.txt" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\swf\flashExport.swf" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\css\colReorder.bootstrap.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\css\colReorder.bootstrap.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\css\colReorder.dataTables.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\css\colReorder.dataTables.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\css\colReorder.foundation.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\css\colReorder.foundation.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\css\colReorder.jqueryui.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\css\colReorder.jqueryui.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\examples\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\examples\initialisation\col_filter.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\examples\initialisation\new_init.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\examples\initialisation\predefined.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\examples\initialisation\realtime.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\examples\initialisation\reset.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\examples\initialisation\scrolling.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\examples\initialisation\simple.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\examples\integration\colvis.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\examples\integration\fixedcolumns.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\examples\integration\fixedheader.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\examples\integration\server_side.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\examples\integration\state_save.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\examples\styling\alt_insert.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\examples\styling\bootstrap.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\examples\styling\foundation.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\examples\styling\jqueryui.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\js\dataTables.colReorder.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\js\dataTables.colReorder.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\License.txt" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\css\fixedColumns.bootstrap.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\css\fixedColumns.dataTables.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\css\fixedColumns.dataTables.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\css\fixedColumns.foundation.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\css\fixedColumns.foundation.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\css\fixedColumns.jqueryui.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\initialisation\colvis.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\initialisation\css_size.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\initialisation\index_column.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\initialisation\left_right_columns.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\initialisation\right_column.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\initialisation\server-side-processing.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\initialisation\simple.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\initialisation\size_fixed.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\initialisation\size_fluid.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\initialisation\two_columns.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\styling\bootstrap.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\styling\colvis.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\styling\col_filter.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\styling\foundation.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\styling\jqueryui.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\styling\rowspan.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\examples\styling\server-side-processing.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\js\dataTables.fixedColumns.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\js\dataTables.fixedColumns.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\License.txt" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\css\fixedHeader.bootstrap.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\css\fixedHeader.dataTables.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\css\fixedHeader.dataTables.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\css\fixedHeader.foundation.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\css\fixedHeader.foundation.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\css\fixedHeader.jqueryui.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\examples\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\examples\integration\colreorder.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\examples\integration\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\examples\integration\responsive.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\examples\options\enable-disable.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\examples\options\header_footer.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\examples\options\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\examples\options\new.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\examples\options\offset.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\examples\options\simple.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\examples\options\two_tables.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\examples\styling\bootstrap.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\examples\styling\foundation.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\examples\styling\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\examples\styling\jqueryui.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\js\dataTables.fixedHeader.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\js\dataTables.fixedHeader.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\License.txt" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\css\keyTable.bootstrap.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\css\keyTable.bootstrap.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\css\keyTable.dataTables.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\css\keyTable.dataTables.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\css\keyTable.foundation.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\css\keyTable.foundation.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\css\keyTable.jqueryui.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\css\keyTable.jqueryui.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\examples\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\examples\initialisation\events.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\examples\initialisation\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\examples\initialisation\scrolling.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\examples\initialisation\server-side.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\examples\initialisation\simple.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\examples\initialisation\stateSave.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\examples\styling\bootstrap.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\examples\styling\focusStyle.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\examples\styling\foundation.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\examples\styling\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\examples\styling\jqueryui.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\js\dataTables.keyTable.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\js\dataTables.keyTable.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\License.txt" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\css\responsive.bootstrap.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\css\responsive.bootstrap.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\css\responsive.dataTables.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\css\responsive.dataTables.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\css\responsive.foundation.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\css\responsive.foundation.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\css\responsive.jqueryui.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\css\responsive.jqueryui.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\child-rows\column-control.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\child-rows\custom-renderer.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\child-rows\disable-child-rows.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\child-rows\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\child-rows\right-column.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\child-rows\whole-row-control.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\display-control\auto.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\display-control\classes.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\display-control\complexHeader.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\display-control\fixedHeader.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\display-control\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\display-control\init-classes.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\initialisation\ajax.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\initialisation\className.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\initialisation\default.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\initialisation\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\initialisation\new.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\initialisation\option.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\styling\bootstrap.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\styling\compact.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\styling\foundation.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\styling\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\styling\jqueryui.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\examples\styling\scrolling.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\js\dataTables.responsive.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\js\dataTables.responsive.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\License.txt" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\css\rowReorder.bootstrap.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\css\rowReorder.bootstrap.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\css\rowReorder.dataTables.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\css\rowReorder.dataTables.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\css\rowReorder.foundation.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\css\rowReorder.foundation.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\css\rowReorder.jqueryui.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\css\rowReorder.jqueryui.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\examples\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\examples\initialisation\defaults.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\examples\initialisation\events.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\examples\initialisation\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\examples\initialisation\responsive.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\examples\initialisation\restrictedOrdering.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\examples\initialisation\selector.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\examples\initialisation\simple.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\examples\styling\bootstrap.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\examples\styling\foundation.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\examples\styling\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\examples\styling\jqueryui.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\examples\styling\reorderClass.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\examples\styling\snapX.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\js\dataTables.rowReorder.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\js\dataTables.rowReorder.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\License.txt" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\css\scroller.bootstrap.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\css\scroller.bootstrap.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\css\scroller.dataTables.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\css\scroller.dataTables.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\css\scroller.foundation.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\css\scroller.foundation.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\css\scroller.jqueryui.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\css\scroller.jqueryui.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\examples\data\2500.txt" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\examples\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\examples\initialisation\api_scrolling.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\examples\initialisation\fixedColumns.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\examples\initialisation\large_js_source.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\examples\initialisation\server-side_processing.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\examples\initialisation\simple.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\examples\initialisation\state_saving.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\examples\styling\bootstrap.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\examples\styling\foundation.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\examples\styling\jqueryui.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\js\dataTables.scroller.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\js\dataTables.scroller.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\License.txt" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\css\select.bootstrap.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\css\select.bootstrap.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\css\select.dataTables.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\css\select.dataTables.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\css\select.foundation.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\css\select.foundation.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\css\select.jqueryui.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\css\select.jqueryui.min.css" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\api\events.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\api\get.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\api\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\api\select.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\initialisation\blurable.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\initialisation\buttons.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\initialisation\cells.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\initialisation\checkbox.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\initialisation\deferRender.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\initialisation\i18n.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\initialisation\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\initialisation\multi.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\initialisation\reload.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\initialisation\simple.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\initialisation\single.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\styling\bootstrap.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\styling\foundation.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\styling\index.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\examples\styling\jqueryui.html" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\js\dataTables.select.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\js\dataTables.select.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\License.txt" />
+    <Content Include="Themes\Common\Scripts\DataTables\images\favicon.ico" />
+    <Content Include="Themes\Common\Scripts\DataTables\images\sort_asc.png" />
+    <Content Include="Themes\Common\Scripts\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="Themes\Common\Scripts\DataTables\images\sort_both.png" />
+    <Content Include="Themes\Common\Scripts\DataTables\images\sort_desc.png" />
+    <Content Include="Themes\Common\Scripts\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="Themes\Common\Scripts\DataTables\js\dataTables.bootstrap.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\js\dataTables.bootstrap.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\js\dataTables.foundation.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\js\dataTables.foundation.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\js\dataTables.jqueryui.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\js\dataTables.jqueryui.min.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\js\jquery.dataTables.js" />
+    <Content Include="Themes\Common\Scripts\DataTables\js\jquery.dataTables.min.js" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\FormAttach.cshtml" />
+    <Content Include="Views\Shared\FormView.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_ListLayout.cshtml" />
+    <Content Include="Views\Shared\_SearchFormLayout.cshtml" />
+    <Content Include="Views\Shared\_SearchLayout.cshtml" />
+    <Content Include="log4net.config" />
+    <None Include="Themes\Common\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Themes\Common\Scripts\jquery-1.10.2.js" />
+    <Content Include="Themes\Common\Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\blueimp-gallery\blueimp-gallery.min.css" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\blueimp-gallery\jquery.blueimp-gallery.min.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\cors\postmessage.html" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\cors\result.html" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\css\demo-ie8.css" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\css\demo.css" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\css\jquery.fileupload-noscript.css" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\css\jquery.fileupload-ui-noscript.css" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\css\jquery.fileupload-ui.css" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\css\jquery.fileupload.css" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\css\style.css" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\img\loading.gif" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\img\progressbar.gif" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\app.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\cors\jquery.postmessage-transport.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\cors\jquery.xdr-transport.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\jquery.fileupload-angular.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\jquery.fileupload-audio.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\jquery.fileupload-image.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\jquery.fileupload-jquery-ui.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\jquery.fileupload-process.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\jquery.fileupload-ui.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\jquery.fileupload-validate.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\jquery.fileupload-video.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\jquery.fileupload.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\jquery.iframe-transport.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\main.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\vendor\canvas-to-blob.min.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\vendor\jquery.ui.widget.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\vendor\load-image.min.js" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\js\vendor\tmpl.min.js" />
+    <Content Include="Themes\Common\Scripts\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="Themes\Common\Scripts\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Themes\Common\Scripts\jquery-ui-1.10.3.full.min.js" />
+    <Content Include="Themes\Common\Scripts\jquery.cookie.js" />
+    <Content Include="Themes\Common\Scripts\jQuery.formatMoney.js" />
+    <Content Include="Themes\Common\Scripts\jQuery.formatMoney.min.js" />
+    <Content Include="Themes\Common\Scripts\jquery.PrintArea.js" />
+    <None Include="Themes\Common\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Themes\Common\Scripts\jquery.validate.js" />
+    <Content Include="Themes\Common\Scripts\jquery.validate.min.js" />
+    <Content Include="Themes\Common\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Themes\Common\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Themes\Common\Scripts\jstree\dist\jstree.js" />
+    <Content Include="Themes\Common\Scripts\jstree\dist\jstree.min.js" />
+    <Content Include="Themes\Common\Scripts\jstree\dist\themes\default-dark\32px.png" />
+    <Content Include="Themes\Common\Scripts\jstree\dist\themes\default-dark\40px.png" />
+    <Content Include="Themes\Common\Scripts\jstree\dist\themes\default-dark\style.css" />
+    <Content Include="Themes\Common\Scripts\jstree\dist\themes\default-dark\style.min.css" />
+    <Content Include="Themes\Common\Scripts\jstree\dist\themes\default-dark\throbber.gif" />
+    <Content Include="Themes\Common\Scripts\jstree\dist\themes\default\32px.png" />
+    <Content Include="Themes\Common\Scripts\jstree\dist\themes\default\32px_line.png" />
+    <Content Include="Themes\Common\Scripts\jstree\dist\themes\default\32px_original.png" />
+    <Content Include="Themes\Common\Scripts\jstree\dist\themes\default\40px.png" />
+    <Content Include="Themes\Common\Scripts\jstree\dist\themes\default\style.css" />
+    <Content Include="Themes\Common\Scripts\jstree\dist\themes\default\style.min.css" />
+    <Content Include="Themes\Common\Scripts\jstree\dist\themes\default\throbber.gif" />
+    <Content Include="Themes\Common\Scripts\modernizr-2.6.2.js" />
+    <Content Include="Themes\Common\Scripts\noty\animate.css" />
+    <Content Include="Themes\Common\Scripts\noty\layouts\bottom.js" />
+    <Content Include="Themes\Common\Scripts\noty\layouts\bottomCenter.js" />
+    <Content Include="Themes\Common\Scripts\noty\layouts\bottomLeft.js" />
+    <Content Include="Themes\Common\Scripts\noty\layouts\bottomRight.js" />
+    <Content Include="Themes\Common\Scripts\noty\layouts\center.js" />
+    <Content Include="Themes\Common\Scripts\noty\layouts\centerLeft.js" />
+    <Content Include="Themes\Common\Scripts\noty\layouts\centerRight.js" />
+    <Content Include="Themes\Common\Scripts\noty\layouts\inline.js" />
+    <Content Include="Themes\Common\Scripts\noty\layouts\top.js" />
+    <Content Include="Themes\Common\Scripts\noty\layouts\topCenter.js" />
+    <Content Include="Themes\Common\Scripts\noty\layouts\topLeft.js" />
+    <Content Include="Themes\Common\Scripts\noty\layouts\topRight.js" />
+    <Content Include="Themes\Common\Scripts\noty\noty.js" />
+    <Content Include="Themes\Common\Scripts\noty\packaged\jquery.noty.packaged.min.js" />
+    <Content Include="Themes\Common\Scripts\noty\promise.js" />
+    <Content Include="Themes\Common\Scripts\noty\themes\bootstrap.js" />
+    <Content Include="Themes\Common\Scripts\noty\themes\default.js" />
+    <Content Include="Themes\Common\Scripts\noty\themes\relax.js" />
+    <Content Include="Themes\Common\Scripts\respond.js" />
+    <Content Include="Themes\Common\Scripts\respond.min.js" />
+    <None Include="Themes\Common\Scripts\_references.js" />
+    <Content Include="Themes\Css\Black\darkblue.css" />
+    <Content Include="Themes\Css\Black\FormStyle.css" />
+    <Content Include="Themes\Css\Black\grr.css" />
+    <Content Include="Themes\Css\Blue\darkblue.css" />
+    <Content Include="Themes\Css\Blue\FormStyle.css" />
+    <Content Include="Themes\Css\components.css" />
+    <Content Include="Themes\Css\jcarousel.connected-carousels.css" />
+    <Content Include="Themes\Css\layout.css" />
+    <Content Include="Themes\Css\Login.css" />
+    <Content Include="Themes\Css\OTRStyle.css" />
+    <Content Include="Themes\Css\profile.css" />
+    <Content Include="Themes\Css\Site.css" />
+    <Content Include="Themes\Css\style.css" />
+    <Content Include="Themes\Css\styleTips.css" />
+    <Content Include="Themes\Images\01.png" />
+    <Content Include="Themes\Images\a_left.png" />
+    <Content Include="Themes\Images\a_right.png" />
+    <Content Include="Themes\Images\cn.png" />
+    <Content Include="Themes\Images\del.png" />
+    <Content Include="Themes\Images\en.png" />
+    <Content Include="Themes\Images\hide.png" />
+    <Content Include="Themes\Images\icon_52.png" />
+    <Content Include="Themes\Images\icon_53.png" />
+    <Content Include="Themes\Images\icon_54.png" />
+    <Content Include="Themes\Images\icon_55.png" />
+    <Content Include="Themes\Images\icon_56.png" />
+    <Content Include="Themes\Images\icon_57.png" />
+    <Content Include="Themes\Images\icon_58.png" />
+    <Content Include="Themes\Images\icon_59.png" />
+    <Content Include="Themes\Images\icon_60.png" />
+    <Content Include="Themes\Images\icon_61.png" />
+    <Content Include="Themes\Images\icon_62.png" />
+    <Content Include="Themes\Images\icon_63.png" />
+    <Content Include="Themes\Images\icon_64.png" />
+    <Content Include="Themes\Images\icon_85.png" />
+    <Content Include="Themes\Images\icon_86.png" />
+    <Content Include="Themes\Images\login_bg.jpg" />
+    <Content Include="Themes\Images\login_bg_1.jpg" />
+    <Content Include="Themes\Images\login_bg_2.jpg" />
+    <Content Include="Themes\Images\login_bg_3.jpg" />
+    <Content Include="Themes\Images\login_bg_4.jpg" />
+    <Content Include="Themes\Images\login_bg_5.jpg" />
+    <Content Include="Themes\Images\login_bg_6.jpg" />
+    <Content Include="Themes\Images\login_bg_7.jpg" />
+    <Content Include="Themes\Images\logo.jpg" />
+    <Content Include="Themes\Images\logo.png" />
+    <Content Include="Themes\Images\logo_1.png" />
+    <Content Include="Themes\Images\Rate.png" />
+    <Content Include="Themes\Images\title.png" />
+    <Content Include="Themes\Images\title_home.png" />
+    <Content Include="Themes\Images\update.png" />
+    <Content Include="Themes\Images\user.png" />
+    <Content Include="Themes\Images\userImage.png" />
+    <Content Include="Themes\Scripts\ApplyForm.js" />
+    <Content Include="Themes\Scripts\common.js" />
+    <Content Include="Themes\Scripts\ConvertCurrency.js" />
+    <Content Include="Themes\Scripts\jcarousel.connected-carousels.js" />
+    <Content Include="Themes\Scripts\jquery.jcarousel.min.js" />
+    <Content Include="Themes\Scripts\jquery.js" />
+    <Content Include="Themes\Scripts\layout.js" />
+    <Content Include="Themes\Scripts\metronic.js" />
+    <Content Include="Themes\Scripts\quick-sidebar.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Index\Home.cshtml" />
+    <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\Index\NewApplication.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\Logout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="CodeTemplates\MvcControllerWithContext\Controller.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Create.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Delete.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Details.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Edit.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Empty.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\Imports.include.t4" />
+    <Content Include="CodeTemplates\MvcView\List.cs.t4" />
+    <Content Include="CodeTemplates\MvcView\ModelMetadataFunctions.cs.include.t4" />
+    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Entity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Entity.cs</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Mapping.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Mapping.cs</LastGenOutput>
+    </Content>
+    <None Include="Project_Readme.html" />
+    <Content Include="Themes\Common\Css\Fontawesone\fonts\fontawesome-webfont.eot" />
+    <Content Include="Themes\Common\Css\Fontawesone\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Themes\Common\Css\Fontawesone\fonts\fontawesome-webfont.woff" />
+    <Content Include="Themes\Common\Css\Fontawesone\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Themes\Common\Css\Fontawesone\fonts\FontAwesome.otf" />
+    <Content Include="Themes\Common\Fonts\fontawesome-webfont.eot" />
+    <Content Include="Themes\Common\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Themes\Common\Fonts\fontawesome-webfont.woff" />
+    <Content Include="Themes\Common\Fonts\fontawesome-webfont.woff2" />
+    <Content Include="Themes\Common\Fonts\FontAwesome.otf" />
+    <Content Include="Themes\Common\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Themes\Common\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Themes\Common\Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\data\gauge.json" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\data\map.json" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\data\MSFT.csv" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\data\MSFT_events.csv" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\data\pie.csv" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\data\pie.json" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\data\serial.csv" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\data\serial.json" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\data\serial2.json" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\examples\data\TXN.csv" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\dataloader\readme.md" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\libs\pdfmake\pdfmake.min.js.map" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\libs\xlsx\LICENSE" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\libs\xlsx\xlsx.min.map" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\LICENSE" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\export\README.md" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\readme.md" />
+    <Content Include="Themes\Common\Scripts\amcharts\plugins\responsive\responsive.min.js.map" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\CHANGELOG.md" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\less\datepicker.less" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\less\datepicker3.less" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\LICENSE" />
+    <Content Include="Themes\Common\Scripts\bootstrap-datepicker\README.md" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\AutoFill\Readme.md" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\css\common.scss" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\css\mixins.scss" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Buttons\Readme.md" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\ColReorder\Readme.md" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedColumns\Readme.md" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\FixedHeader\Readme.md" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\KeyTable\Readme.md" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Responsive\Readme.md" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\RowReorder\Readme.md" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\examples\data\ssp.php" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Scroller\Readme.md" />
+    <Content Include="Themes\Common\Scripts\DataTables\extensions\Select\Readme.md" />
+    <Content Include="Themes\Common\Scripts\DataTables\images\Sorting icons.psd" />
+    <Content Include="Themes\Common\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Themes\Common\Scripts\jquery-file-upload\README.md" />
+    <Content Include="Themes\Common\Scripts\jquery-slimscroll\README.md" />
+    <Content Include="Themes\Common\Scripts\jquery-slimscroll\slimScroll.jquery.json" />
+    <Content Include="Themes\Common\Scripts\jstree\jstree.jquery.json" />
+    <Content Include="Themes\Common\Scripts\jstree\LICENSE-MIT" />
+    <Content Include="Themes\Common\Scripts\jstree\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Inventec.Common\Inventec.Common.csproj">
+      <Project>{fe704799-59b2-4722-8a11-f21d96e621aa}</Project>
+      <Name>Inventec.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inventec.DAL\Inventec.DAL.csproj">
+      <Project>{b1433c53-279a-45bc-aabd-d444c7f7d4ec}</Project>
+      <Name>Inventec.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inventec.Models\Inventec.Models.csproj">
+      <Project>{0fd21725-6a28-4ab0-a30c-5816fad942f0}</Project>
+      <Name>Inventec.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inventec.Ultimus\Inventec.Ultimus.csproj">
+      <Project>{2bb590d6-4029-459d-b566-79be4c290194}</Project>
+      <Name>Inventec.Ultimus</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\zh_CN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>zh_CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\en_US.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>en_US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\zh_TW.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>zh_TW.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>34898</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:34898/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,144 @@
+﻿<#@ template language="C#" HostSpecific="True" #>
+<#@ output extension=".cshtml" #>
+<#@ include file="Imports.include.t4" #>
+@model IEnumerable<#= "<" + ViewDataTypeName + ">" #>
+<#
+// The following chained if-statement outputs the file header code and markup for a partial view, a view using a layout page, or a regular view.
+if(IsPartialView) {
+#>
+
+<#
+} else if(IsLayoutPageSelected) {
+#>
+
+@{
+    ViewBag.Title = "<#= ViewName#>";
+<#
+if (!String.IsNullOrEmpty(LayoutPageFile)) {
+#>
+    Layout = "<#= LayoutPageFile#>";
+<#
+}
+#>
+}
+
+
+<#
+} else {
+#>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title><#= ViewName #></title>
+</head>
+<body>
+<#
+    PushIndent("    ");
+}
+#>
+<div class="page-content">
+    <div class="page-header">
+        <h4>
+            <i class="icon-hand-right icon-animated-hand-pointer blue"></i>  @Html.LangString("<#= ViewDataTypeName.Replace("Inventec.Models.","") #>")
+			<span class="pull-right">
+                <a href='@Url.Action("Create", null,null)' class="btn btn-default btn-sm"><i class='icon-file-alt'></i> @Html.LangString("Add")</a>
+				<a href='@Url.Action("Delete", null,null)' class="btn btn-default btn-sm ajax-post confirm novalid" target-form="listtable"><i class='icon-trash'></i> @Html.LangString("Delete")</a>
+            </span>
+        </h4>
+</div><!-- /.page-header -->
+@using (Html.BeginForm("Index", null, FormMethod.Post, new { Class = "indexform" }))
+    {
+        @Html.AntiForgeryToken()
+        <table class="table table-striped table-bordered table-hover listtable">
+            <thead>
+    <tr>
+	    <th class="center"><input type="checkbox" name="checkAll" id="checkAll"/></th>
+<#
+IEnumerable<PropertyMetadata> properties = ModelMetadata.Properties;
+foreach (PropertyMetadata property in properties) {
+    if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey && !property.IsReadOnly) {
+#>
+<#
+        // We do not want to show any association properties for which there is
+        // no associated foreign key.
+        if (property.IsAssociation && GetRelatedModelMetadata(property) == null) {
+            continue;
+        }
+#>
+        <th>
+            @Html.LangString("<#= ViewDataTypeName.Replace("Inventec.Models.","") #>_<#= GetValueExpression(property) #>")
+        </th>
+<#
+    }
+}
+#>
+        <th>
+		  @Html.LangString("Operation")
+		</th>
+    </tr>
+	</thead>
+
+	<tbody>
+<#
+  string pkName = GetPrimaryKeyName();
+#>
+@foreach (var item in Model) {
+    <tr>
+	<td  class="center"><input type="checkbox" id="checkItem" name="checkItem" value="@item.<#=pkName#>" /></td>
+<#
+foreach (PropertyMetadata property in properties) {
+    if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey && !property.IsReadOnly) {
+#>
+<#
+        // We do not want to show any association properties for which there is
+        // no associated foreign key.
+        if (property.IsAssociation && GetRelatedModelMetadata(property) == null) {
+            continue;
+        }
+#>
+        <td>
+            @Html.DisplayFor(modelItem => <#= "item." + GetValueExpression(property) #>)
+        </td>
+<#
+    }
+}
+
+
+if (pkName != null) {
+#>
+        <td class="td-btn">
+                            <a href='@Url.Action("Details", null, new{id=item.id})' class="btn btn-xs"><i class='icon-zoom-in icon-large'></i></a>
+                            <a href='@Url.Action("Edit", null, new{id=item.id})' class="btn btn-xs"><i class='icon-pencil icon-large'></i></a>
+                        </td>
+<#
+} 
+#>
+    </tr>
+}
+
+</tbody>
+        </table>
+		}
+
+
+</div><!-- /.page-content -->
+<#
+// The following code closes the tag used in the case of a view using a layout page and the body and html tags in the case of a regular view page
+#>
+<#
+if(!IsPartialView && !IsLayoutPageSelected) {
+    ClearIndent();
+#>
+</body>
+</html>
+<#
+}
+#>
+<#@ include file="ModelMetadataFunctions.cs.include.t4" #>
